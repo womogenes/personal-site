@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const { icon, href, color, darkColor = color } = Astro.props;
+---
+
+<a
+  href={href}
+  class="flex h-10 w-10 items-center justify-center rounded-full border-[1.5px] border-zinc-600 p-2 text-zinc-600 transition-colors hover:text-white dark:border-zinc-400 dark:text-zinc-400"
+  style={`
+    --hover-bg-color: ${color};
+    --hover-border-color: ${color};`}
+>
+  <Icon name={icon} class="h-full w-full" />
+</a>
+
+<style>
+  a:hover {
+    background-color: var(--hover-bg-color);
+    border-color: var(--hover-border-color);
+  }
+</style>
