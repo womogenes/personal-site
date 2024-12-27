@@ -14,8 +14,8 @@ import Link from '../components/Link.astro';
     <div class="w-full max-w-lg">
       <!-- Title -->
       <div class="mb-2 flex-col items-center gap-4 tracking-tight">
-        <img src="/favicon.svg" class="h-12 mb-2" />
-        <h1 class="text-4xl font-black">William Y. &nbsp;Feng</h1>
+        <img src="/favicon.svg" class="mb-2 h-12" />
+        <h1 class="text-4xl font-black">William Y. Feng</h1>
       </div>
 
       <!-- Content -->
@@ -42,13 +42,13 @@ import Link from '../components/Link.astro';
         </div>
 
         <!-- Projects -->
-        <div class="prose flex flex-col gap-2 leading-normal dark:text-white">
-          <h2 class="mb-1 text-2xl font-bold dark:text-white">things</h2>
+        <div class="prose flex flex-col gap-2">
+          <h2 class="mb-1 text-2xl font-bold">things</h2>
 
           <p>
             <a href="https://photonfarmers.pages.dev" target="_blank">
               photon farmers</a
-            > &mdash; a game about the future of solar energy
+            > &mdash; a game about the future of solar energy<br />
             <span class="text-muted">(three.js, sveltekit)</span>
           </p>
 
@@ -58,14 +58,14 @@ import Link from '../components/Link.astro';
               target="_blank"
             >
               spotify artist map</a
-            > &mdash; pca-based map of 2.5k spotify artists
+            > &mdash; pca-based map of 2.5k spotify artists<br />
             <span class="text-muted">(python, d3.js)</span>
           </p>
 
           <p>
             <a href="https://selltoai.womogenes.com" target="_blank">
               sell to ai</a
-            > &mdash; a game about product placement in the age of ai
+            > &mdash; a game about product placement in the age of ai<br />
             <span class="text-muted">(next.js, fastapi, openai api)</span>
           </p>
         </div>
@@ -80,11 +80,17 @@ import Link from '../components/Link.astro';
     @apply h-full;
   }
 
+  .prose {
+    @apply dark:text-white;
+  }
+  .prose h2 {
+    @apply dark:text-white;
+  }
   .prose a {
     @apply text-blue-500 dark:text-blue-300;
   }
   .prose p {
-    @apply m-0;
+    @apply m-0 leading-normal;
   }
 
   .text-muted {
