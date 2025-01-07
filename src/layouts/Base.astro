@@ -1,13 +1,17 @@
 ---
+import '@fontsource/inter';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/900.css';
+
 const { title } = Astro.props;
 ---
 
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href="/public/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.json" />
 
     <title>{title}</title>
@@ -16,3 +20,27 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
+
+<style is:global>
+  html,
+  body {
+    @apply h-full;
+  }
+
+  .prose {
+    @apply dark:text-white;
+  }
+  .prose h2 {
+    @apply dark:text-white;
+  }
+  .prose a {
+    @apply text-blue-500 dark:text-blue-300;
+  }
+  .prose p {
+    @apply m-0 mb-2 leading-normal;
+  }
+
+  .text-muted {
+    @apply text-zinc-400 dark:text-zinc-300;
+  }
+</style>
